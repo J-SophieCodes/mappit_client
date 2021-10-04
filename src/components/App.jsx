@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import Heatmap from './Heatmap';
 import Markers from './Markers';
+import ApiClient from '../lib/ApiClient';
 
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import axios from 'axios';
 
 const LIBRARIES = ["visualization"];
 
@@ -14,11 +14,7 @@ function App() {
   const [center, setCenter] = useState({ lat: 43.641382, lng: -79.431819 });
 
   useEffect(() => { 
-    axios.get('http://localhost:5000/properties')
-      .then(({data}) => {
-        setProperties(data);
-      })
-      .catch(err => console.log(err));
+    ApiClient.getProperties(data => setProperties(data));
   }, [])
 
   return (
