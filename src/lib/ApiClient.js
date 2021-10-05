@@ -20,7 +20,7 @@ axios.defaults.headers.common["Accept"] = "application/json";
 const apiClient = {
   getProperties: function(callback) {
     return axios
-      .get("api/properties")
+      .get("/api/properties")
       .then(unwrapData)
       .then(callback)
       .catch(logError);
