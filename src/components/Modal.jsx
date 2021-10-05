@@ -17,7 +17,6 @@ const Modal = ({ selected, setSelected, setCenter }) => {
             <h4>{selected.city}, {selected.country}</h4>
             <p>Lease Term: {selected.lease_term_months} months</p>
             <p>Monthly Rate: ${selected.monthly_rate}</p>
-            <p>{selected.total_views}</p>
           </div>
       </InfoWindow>
       )}
