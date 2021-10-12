@@ -25,6 +25,14 @@ const apiClient = {
       .then(callback)
       .catch(logError);
   },
+
+  getPropertiesByCity: function(city, callback) {
+    return axios
+    .get(`/api/properties/${city}`)
+    .then(unwrapData)
+    .then(callback)
+    .catch(logError);
+  }
 };
 
 export default apiClient;
